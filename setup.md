@@ -1,0 +1,74 @@
+TOKEN1=fsweat.v4.ftfactory.testnet
+TOKEN2=fflux.v4.ftfactory.testnet
+TOKEN3=faur.v4.ftfactory.testnet
+TOKEN4=fusdt.v4.ftfactory.testnet
+TOKEN5=fusdc.v4.ftfactory.testnet
+TOKEN6=fbtc.v4.ftfactory.testnet
+TOKEN7=foct.v4.ftfactory.testnet
+
+FACTORY_ID=v4.ftfactory.testnet
+USER_ID=hub.dexgateway.testnet
+ARBITRAGE_ID=hub.dexgateway.testnet
+ARBITRAGE=hub.dexgateway.testnet
+DEX1=dexv1.dexgateway.testnet
+DEX2=dexv2.dexgateway.testnet
+DEX3=dexv3.dexgateway.testnet
+
+VAL1="1000000000000000000000"
+VAL2="200000000000000000000000000000"
+VAL3="30000000000000000000000000"
+VAL4="40000000000000000000000000"
+VAL5="30000000000000000000000000"
+VAL6="2000000000000000"
+VAL7="20000000000000000000000000000000"
+
+VAL12="500000000000000000000"
+VAL24="50000000000000000000000000000"
+VAL34="7500000000000000000000000"
+VAL42="2000000000000000000000000"
+VAL58="3750000000000000000000000"
+VAL64="500000000000000"
+VAL74="5000000000000000000000000000000"
+
+VAL14="200000000000000000000"
+VAL22="80000000000000000000000000000"
+VAL44="8000000000000000000000000"
+VAL54="7000000000000000000000000"
+VAL72="8000000000000000000000000000000"
+
+VAL32="1200000000000000000000000"
+
+near call $TOKEN1 storage_deposit "{\"account_id\": \"$DEX1\"}" --accountId $DEX1 --deposit 0.00125 && near call $TOKEN2 storage_deposit "{\"account_id\": \"$DEX1\"}" --accountId $DEX1 --deposit 0.00125 && near call $TOKEN3 storage_deposit "{\"account_id\": \"$DEX1\"}" --accountId $DEX1 --deposit 0.00125 && near call $TOKEN4 storage_deposit "{\"account_id\": \"$DEX1\"}" --accountId $DEX1 --deposit 0.00125 && near call $TOKEN5 storage_deposit "{\"account_id\": \"$DEX1\"}" --accountId $DEX1 --deposit 0.00125 && near call $TOKEN6 storage_deposit "{\"account_id\": \"$DEX1\"}" --accountId $DEX1 --deposit 0.00125 && near call $TOKEN7 storage_deposit "{\"account_id\": \"$DEX1\"}" --accountId $DEX1 --deposit 0.00125
+
+near call $TOKEN1 storage_deposit "{\"account_id\": \"$DEX2\"}" --accountId $DEX2 --deposit 0.00125 && near call $TOKEN2 storage_deposit "{\"account_id\": \"$DEX2\"}" --accountId $DEX2 --deposit 0.00125 && near call $TOKEN3 storage_deposit "{\"account_id\": \"$DEX2\"}" --accountId $DEX2 --deposit 0.00125 && near call $TOKEN4 storage_deposit "{\"account_id\": \"$DEX2\"}" --accountId $DEX2 --deposit 0.00125 && near call $TOKEN5 storage_deposit "{\"account_id\": \"$DEX2\"}" --accountId $DEX2 --deposit 0.00125 && near call $TOKEN6 storage_deposit "{\"account_id\": \"$DEX2\"}" --accountId $DEX2 --deposit 0.00125 && near call $TOKEN7 storage_deposit "{\"account_id\": \"$DEX2\"}" --accountId $DEX2 --deposit 0.00125
+
+near call $TOKEN1 storage_deposit "{\"account_id\": \"$DEX3\"}" --accountId $DEX3 --deposit 0.00125 && near call $TOKEN2 storage_deposit "{\"account_id\": \"$DEX3\"}" --accountId $DEX3 --deposit 0.00125 && near call $TOKEN3 storage_deposit "{\"account_id\": \"$DEX3\"}" --accountId $DEX3 --deposit 0.00125 && near call $TOKEN4 storage_deposit "{\"account_id\": \"$DEX3\"}" --accountId $DEX3 --deposit 0.00125 && near call $TOKEN5 storage_deposit "{\"account_id\": \"$DEX3\"}" --accountId $DEX3 --deposit 0.00125 && near call $TOKEN6 storage_deposit "{\"account_id\": \"$DEX3\"}" --accountId $DEX3 --deposit 0.00125 && near call $TOKEN7 storage_deposit "{\"account_id\": \"$DEX3\"}" --accountId $DEX3 --deposit 0.00125 
+
+near call $TOKEN1 storage_deposit "{\"account_id\": \"$ARBITRAGE\"}" --accountId $ARBITRAGE --deposit 0.00125 && near call $TOKEN2 storage_deposit "{\"account_id\": \"$ARBITRAGE\"}" --accountId $ARBITRAGE --deposit 0.00125 && near call $TOKEN3 storage_deposit "{\"account_id\": \"$ARBITRAGE\"}" --accountId $ARBITRAGE --deposit 0.00125 && near call $TOKEN4 storage_deposit "{\"account_id\": \"$ARBITRAGE\"}" --accountId $ARBITRAGE --deposit 0.00125 && near call $TOKEN5 storage_deposit "{\"account_id\": \"$ARBITRAGE\"}" --accountId $ARBITRAGE --deposit 0.00125 && near call $TOKEN6 storage_deposit "{\"account_id\": \"$ARBITRAGE\"}" --accountId $ARBITRAGE --deposit 0.00125 && near call $TOKEN7 storage_deposit "{\"account_id\": \"$ARBITRAGE\"}" --accountId $ARBITRAGE --deposit 0.00125
+
+ near call $DEX1 storage_deposit --accountId $ARBITRAGE_ID --deposit 8 && near call $DEX2 storage_deposit --accountId $ARBITRAGE_ID --deposit 8 && near call $DEX3 storage_deposit --accountId $ARBITRAGE_ID --deposit 8 && near call $DEX1 register_tokens "{\"token_ids\": [\"$TOKEN1\", \"$TOKEN2\", \"$TOKEN3\", \"$TOKEN4\", \"$TOKEN5\", \"$TOKEN6\", \"$TOKEN7\"]}" --accountId $USER_ID --depositYocto 1 && near call $DEX2 register_tokens "{\"token_ids\": [\"$TOKEN1\", \"$TOKEN2\", \"$TOKEN3\", \"$TOKEN4\", \"$TOKEN5\", \"$TOKEN6\", \"$TOKEN7\"]}" --accountId $USER_ID --depositYocto 1 && near call $DEX3 register_tokens "{\"token_ids\": [\"$TOKEN1\", \"$TOKEN2\", \"$TOKEN3\", \"$TOKEN4\", \"$TOKEN5\", \"$TOKEN6\", \"$TOKEN7\"]}" --accountId $USER_ID --depositYocto 1
+
+near call $DEX1 register_tokens "{\"token_ids\": [\"$TOKEN1\", \"$TOKEN2\", \"$TOKEN3\", \"$TOKEN4\", \"$TOKEN5\", \"$TOKEN6\", \"$TOKEN7\"]}" --accountId $ARBITRAGE_ID --depositYocto 1 && near call $DEX2 register_tokens "{\"token_ids\": [\"$TOKEN1\", \"$TOKEN2\", \"$TOKEN3\", \"$TOKEN4\", \"$TOKEN5\", \"$TOKEN6\", \"$TOKEN7\"]}" --accountId $ARBITRAGE_ID --depositYocto 1 && near call $DEX3 register_tokens "{\"token_ids\": [\"$TOKEN1\", \"$TOKEN2\", \"$TOKEN3\", \"$TOKEN4\", \"$TOKEN5\", \"$TOKEN6\", \"$TOKEN7\"]}" --accountId $ARBITRAGE_ID --depositYocto 1
+
+near call $TOKEN1 ft_transfer_call "{\"receiver_id\": \"$DEX1\", \"amount\": \"$VAL1\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN2 ft_transfer_call "{\"receiver_id\": \"$DEX1\", \"amount\": \"$VAL2\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN3 ft_transfer_call "{\"receiver_id\": \"$DEX1\", \"amount\": \"$VAL3\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN4 ft_transfer_call "{\"receiver_id\": \"$DEX1\", \"amount\": \"$VAL4\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN5 ft_transfer_call "{\"receiver_id\": \"$DEX1\", \"amount\": \"$VAL5\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN6 ft_transfer_call "{\"receiver_id\": \"$DEX1\", \"amount\": \"$VAL6\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN7 ft_transfer_call "{\"receiver_id\": \"$DEX1\", \"amount\": \"$VAL7\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000
+
+near call $TOKEN1 ft_transfer_call "{\"receiver_id\": \"$DEX2\", \"amount\": \"$VAL1\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN2 ft_transfer_call "{\"receiver_id\": \"$DEX2\", \"amount\": \"$VAL2\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN3 ft_transfer_call "{\"receiver_id\": \"$DEX2\", \"amount\": \"$VAL3\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN4 ft_transfer_call "{\"receiver_id\": \"$DEX2\", \"amount\": \"$VAL4\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN5 ft_transfer_call "{\"receiver_id\": \"$DEX2\", \"amount\": \"$VAL5\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN6 ft_transfer_call "{\"receiver_id\": \"$DEX2\", \"amount\": \"$VAL6\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN7 ft_transfer_call "{\"receiver_id\": \"$DEX2\", \"amount\": \"$VAL7\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000
+
+near call $TOKEN1 ft_transfer_call "{\"receiver_id\": \"$DEX3\", \"amount\": \"$VAL1\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN2 ft_transfer_call "{\"receiver_id\": \"$DEX3\", \"amount\": \"$VAL2\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN3 ft_transfer_call "{\"receiver_id\": \"$DEX3\", \"amount\": \"$VAL3\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN4 ft_transfer_call "{\"receiver_id\": \"$DEX3\", \"amount\": \"$VAL4\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN5 ft_transfer_call "{\"receiver_id\": \"$DEX3\", \"amount\": \"$VAL5\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN6 ft_transfer_call "{\"receiver_id\": \"$DEX3\", \"amount\": \"$VAL6\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN7 ft_transfer_call "{\"receiver_id\": \"$DEX3\", \"amount\": \"$VAL7\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000
+
+near call $DEX1 add_simple_pool "{\"tokens\": [\"$TOKEN1\", \"$TOKEN2\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_simple_pool "{\"tokens\": [\"$TOKEN3\", \"$TOKEN4\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_simple_pool "{\"tokens\": [\"$TOKEN4\", \"$TOKEN5\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_simple_pool "{\"tokens\": [\"$TOKEN5\", \"$TOKEN6\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_simple_pool "{\"tokens\": [\"$TOKEN6\", \"$TOKEN7\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_simple_pool "{\"tokens\": [\"$TOKEN7\", \"$TOKEN3\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1  && near call $DEX1 add_simple_pool "{\"tokens\": [\"$TOKEN2\", \"$TOKEN5\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1
+
+near call $DEX2 add_simple_pool "{\"tokens\": [\"$TOKEN1\", \"$TOKEN2\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_simple_pool "{\"tokens\": [\"$TOKEN1\", \"$TOKEN4\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_simple_pool "{\"tokens\": [\"$TOKEN3\", \"$TOKEN7\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_simple_pool "{\"tokens\": [\"$TOKEN3\", \"$TOKEN6\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_simple_pool "{\"tokens\": [\"$TOKEN4\", \"$TOKEN5\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_simple_pool "{\"tokens\": [\"$TOKEN5\", \"$TOKEN6\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1
+
+near call $DEX3 add_simple_pool "{\"tokens\": [\"$TOKEN1\", \"$TOKEN2\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_simple_pool "{\"tokens\": [\"$TOKEN2\", \"$TOKEN4\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_simple_pool "{\"tokens\": [\"$TOKEN2\", \"$TOKEN5\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_simple_pool "{\"tokens\": [\"$TOKEN3\", \"$TOKEN6\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_simple_pool "{\"tokens\": [\"$TOKEN4\", \"$TOKEN7\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_simple_pool "{\"tokens\": [\"$TOKEN5\", \"$TOKEN6\"], \"fee\": 0}" --accountId $ARBITRAGE_ID --deposit 0.1
+
+near call $DEX1 add_liquidity "{\"pool_id\": 0, \"amounts\": [\"$VAL12\", \"$VAL24\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_liquidity "{\"pool_id\": 1, \"amounts\": [\"$VAL34\", \"$VAL42\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_liquidity "{\"pool_id\": 2, \"amounts\": [\"$VAL42\", \"$VAL58\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_liquidity "{\"pool_id\": 3, \"amounts\": [\"$VAL58\", \"$VAL64\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_liquidity "{\"pool_id\": 4, \"amounts\": [\"$VAL64\", \"$VAL74\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_liquidity "{\"pool_id\": 5, \"amounts\": [\"$VAL74\", \"$VAL34\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX1 add_liquidity "{\"pool_id\": 6, \"amounts\": [\"$VAL24\", \"$VAL58\"]}" --accountId $ARBITRAGE_ID --deposit 0.1
+
+
+near call $DEX2 add_liquidity "{\"pool_id\": 0, \"amounts\": [\"$VAL12\", \"$VAL24\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 1, \"amounts\": [\"$VAL34\", \"$VAL42\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 2, \"amounts\": [\"$VAL42\", \"$VAL58\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 3, \"amounts\": [\"$VAL58\", \"$VAL64\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 4, \"amounts\": [\"$VAL64\", \"$VAL74\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 5, \"amounts\": [\"$VAL74\", \"$VAL34\"]}" --accountId $ARBITRAGE_ID --deposit 0.1
+
+near call $DEX2 add_liquidity "{\"pool_id\": 0, \"amounts\": [\"$VAL14\", \"$VAL22\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 1, \"amounts\": [\"$VAL14\", \"$VAL44\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 2, \"amounts\": [\"$VAL34\", \"$VAL72\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 3, \"amounts\": [\"$VAL34\", \"$VAL64\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 4, \"amounts\": [\"$VAL44\", \"$VAL54\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX2 add_liquidity "{\"pool_id\": 5, \"amounts\": [\"$VAL54\", \"$VAL64\"]}" --accountId $ARBITRAGE_ID --deposit 0.1
+
+near call $DEX3 add_liquidity "{\"pool_id\": 0, \"amounts\": [\"$VAL12\", \"$VAL54\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_liquidity "{\"pool_id\": 1, \"amounts\": [\"$VAL24\", \"$VAL44\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_liquidity "{\"pool_id\": 2, \"amounts\": [\"$VAL24\", \"$VAL54\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_liquidity "{\"pool_id\": 3, \"amounts\": [\"$VAL32\", \"$VAL64\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_liquidity "{\"pool_id\": 4, \"amounts\": [\"$VAL44\", \"$VAL72\"]}" --accountId $ARBITRAGE_ID --deposit 0.1 && near call $DEX3 add_liquidity "{\"pool_id\": 5, \"amounts\": [\"$VAL54\", \"$VAL64\"]}" --accountId $ARBITRAGE_ID --deposit 0.1
+
+near call $ARBITRAGE_ID add_dexs "{\"dexs\": [\"$DEX1\", \"$DEX2\", \"$DEX3\"]}" --account-id $ARBITRAGE_ID --depositYocto 1
