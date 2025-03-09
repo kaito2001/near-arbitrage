@@ -47,3 +47,7 @@ near call $ARBITRAGE_ID add_dexs "{\"dexs\": [\"$DEX1\", \"$DEX2\", \"$DEX3\", \
 near call $TOKEN2 storage_deposit --account-id $ARBITRAGE_ID --deposit 0.25 && near call $TOKEN5 storage_deposit --account-id $ARBITRAGE_ID --deposit 0.25 && near call $TOKEN1 faucet --account-id $ARBITRAGE_ID && near call $TOKEN5 faucet --account-id $ARBITRAGE_ID && near call $CONTRACT_ID storage_deposit --account-id $ARBITRAGE_ID --deposit 1 && near call $TOKEN1 ft_transfer_call "{\"receiver_id\": \"$CONTRACT_ID\", \"amount\": \"100000\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000 && near call $TOKEN5 ft_transfer_call "{\"receiver_id\": \"$CONTRACT_ID\", \"amount\": \"100000\", \"msg\": \"\"}" --accountId $ARBITRAGE_ID --depositYocto 1 --gas 200000000000000
 
 near call $TOKEN1 ft_transfer_call "{\"receiver_id\": \"$ARBITRAGE_ID\", \"amount\": \"1000\", \"msg\": \"{\"dex_id\":\"$CONTRACT_ID\", \"actions\": [{\"pool_id\": 0, \"token_in\": \"$TOKEN1\", \"amount_in\": \"1000\", \"token_out\": \"$TOKEN2\", \"min_amount_out\": \"1\"}]}\"}" --accountId $USER_ID --depositYocto 1 --gas 300000000000000
+
+# UI
+npm install
+npm run start
