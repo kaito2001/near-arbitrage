@@ -11,23 +11,25 @@ export const {
 	}
 } = nearAPI;
 
-const getWallet = async() => {
-	const keyStores = new nearAPI.keyStores.BrowserLocalStorageKeyStore();
-	const near = await nearAPI.connect({
-		networkId: "testnet",
-		deps: {
-			keyStore: keyStores
-		},
-		nodeUrl: "https://rpc.testnet.near.org",
-		walletUrl: "https://wallet.testnet.near.org",
-		helperUrl: "https://helper.testnet.near.org",
-		explorerUrl: "https://explorer.testnet.near.org",
-		});
-	const wallet = new nearAPI.WalletConnection(near);
-		
-	const contractAccount = new nearAPI.Account(near.connection, arbitrageId);
-	return { near, wallet, contractAccount };
-}
+const getWallet = async () => {
+    const keyStores = new nearAPI.keyStores.BrowserLocalStorageKeyStore();
+    const near = await nearAPI.connect({
+        networkId: "testnet",
+        deps: {
+            keyStore: keyStores
+        },
+        nodeUrl: "https://rpc.testnet.near.org",
+        walletUrl: "https://testnet.mynearwallet.com", // MyNearWallet URL
+        helperUrl: "https://helper.testnet.near.org",
+        explorerUrl: "https://explorer.testnet.near.org",
+    });
+
+    const wallet = new nearAPI.WalletConnection(near);
+    const contractAccount = new nearAPI.Account(near.connection, arbitrageId);
+    
+    return { near, wallet, contractAccount };
+};
+
 
 export const initNear = () => async ({ update }) => {
 	const { near, wallet, contractAccount } = await getWallet();
